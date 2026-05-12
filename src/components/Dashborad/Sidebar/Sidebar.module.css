@@ -1,0 +1,14 @@
+.navItem {
+    transition: all 0.5s;
+}
+
+.navItem:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+.aside {
+    background-color: var(--main-color);
+    color: var(--whit-color);
+    width: 250px;
+}
