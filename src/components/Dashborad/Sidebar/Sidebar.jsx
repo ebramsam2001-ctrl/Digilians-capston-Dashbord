@@ -18,11 +18,11 @@ export default function Sidebar() {
                     <h4>Dashbord</h4>
                 </div>
 
-                <nav>
+                <nav className="d-flex flex-column gap-3 mx-3">
                     {
                         links.map((item, index) => {
                             return (
-                                <NavLink to={item.path} className={`${styles.navItem} d-flex align-items-center gap-3`} key={index}>
+                                <NavLink to={item.path} className={`${styles.navItem} d-flex align-items-center gap-3 text-decoration-none text-reset`} key={index}>
                                     <i className={`fa-solid fa-${item.icon} fs-4`}></i>
                                     <span>{item.title}</span>
                                 </NavLink>
