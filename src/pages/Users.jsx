@@ -1,6 +1,12 @@
+import { Outlet } from "react-router-dom";
 
-export default function Users() {
+
+export default function Users({ title }) {
   return (
-    <div>Users</div>
+    <>
+      <section className="py-4">
+        <Outlet title={ title } />
+      </section>
+    </>
   );
 }

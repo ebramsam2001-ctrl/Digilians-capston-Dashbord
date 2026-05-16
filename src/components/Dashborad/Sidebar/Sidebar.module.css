@@ -5,6 +5,7 @@
 .navItem:hover {
     cursor: pointer;
     background-color: white;
+    color: black !important;
 }
 
 .aside {

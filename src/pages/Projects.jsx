@@ -1,6 +1,9 @@
+import { Outlet } from "react-router-dom";
 
-export default function Projects() {
+export default function Projects({ title }) {
   return (
-    <div>Projects</div>
-  )
+    <section className="py-4">
+      <Outlet title={ title } />
+    </section>
+  );
 }
