@@ -8,30 +8,36 @@ import Projects from "./Projects";
 import TableDashbord from "../components/UI/TableDashbord/TableDashbord";
 import FormDashbord from "../components/UI/FormDashbord/FormDashbord";
 import Developers from "./Developers";
+import { useState } from "react";
 
 function Dashboard() {
+
+  const [userState, setUserState] = useState(false);
+  const [projectState, setProjectState] = useState(false);
+  const [developerState, setDeveloperState] = useState(false);
+  
   return (
     <>
       <Navbar adminName="mohamed"/>
       <div className="d-flex">
-        <Sidebar />
+        <Sidebar actives={ userState, projectState, developerState } />
         <main className="flex-grow-1">
           <Routes>
             <Route path="/" element={<StatusPage />} />
 
             <Route path="/users" element={<Users />}>
               <Route index element={<TableDashbord title="User" />} />
-              <Route path="add" element={<FormDashbord />}/>
+              <Route path="add" element={<FormDashbord changeState={ setUserState } />}/>
             </Route>
 
             <Route path="/projects" element={<Projects />}>
               <Route index element={<TableDashbord title="Project" />} />
-              <Route path="add" element={<FormDashbord />}/>
+              <Route path="add" element={<FormDashbord changeState={ setProjectState } />}/>
             </Route>
 
             <Route path="/developers" element={<Developers />}>
               <Route index element={<TableDashbord title="Developer" />} />
-              <Route path="add" element={<FormDashbord />}/>
+              <Route path="add" element={<FormDashbord changeState={ setDeveloperState } />}/>
             </Route>
           </Routes>
         </main>

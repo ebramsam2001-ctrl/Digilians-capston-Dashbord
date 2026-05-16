@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
-export default function Sidebar() {
+export default function Sidebar({ userState, projectState, developerState }) {
     const links = [
         { icon: "users", title: "Status", path: "/" },
-        { icon: "chart-bar", title: "User Management", path: "/users" },
-        { icon: "building", title: "Projects Management", path: "/projects" },
-        { icon: "building", title: "Developers", path: "/developers" },
+        { icon: "chart-bar", title: "User Management", path: "/users", active: userState },
+        { icon: "building", title: "Projects Management", path: "/projects", active: projectState },
+        { icon: "building", title: "Developers", path: "/developers", active: developerState },
         { icon: "users", title: "Cms", path: "/cms" },
         { icon: "message", title: "Livechat", path: "/livechat" },
     ];
@@ -25,6 +25,11 @@ export default function Sidebar() {
                                 <NavLink to={item.path} className={`${styles.navItem} d-flex align-items-center gap-3 text-decoration-none text-reset`} key={index}>
                                     <i className={`fa-solid fa-${item.icon} fs-4`}></i>
                                     <span>{item.title}</span>
+                                    {
+                                        item.active && (
+                                            <span className="bg-warning">pandding</span>
+                                        )
+                                    }
                                 </NavLink>
                             );
                         })
