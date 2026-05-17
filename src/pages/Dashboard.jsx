@@ -20,7 +20,7 @@ function Dashboard() {
     <>
       <Navbar adminName="mohamed"/>
       <div className="d-flex">
-        <Sidebar actives={ userState, projectState, developerState } />
+        <Sidebar userState={ userState } projectState={ projectState } developerState={ developerState } />
         <main className="flex-grow-1">
           <Routes>
             <Route path="/" element={<StatusPage />} />
