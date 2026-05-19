@@ -8,7 +8,10 @@ const app = express();
 // middleware json
 app.use(express.json());
 
-// connectio DB
+// connection DB
+const connectDB = require("./config/db");
+
+connectDB();
 
 // simple logger
 if(process.env.NODE_ENV === "dev") {
